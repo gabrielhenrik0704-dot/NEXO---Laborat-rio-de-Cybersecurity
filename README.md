@@ -17,11 +17,11 @@ Run `node scripts/build.mjs` and `node --test tests/api.test.mjs`, then `node te
 
 ## Runtime secrets
 
-`OPENAI_API_KEY` (optional; server-only) and `OPENAI_MODEL` (optional, defaults to gpt-4.1-mini). Never put credentials in source, browser code or chat. Configure through Sites environment tools. The platform handles `/signin-with-chatgpt` and `/signout-with-chatgpt`.
+`LINUX_RUNNER_URL` and `LINUX_RUNNER_TOKEN` (optional, dedicated HTTPS execution service; see runner/README.md). `OPENAI_API_KEY` (optional; server-only) and `OPENAI_MODEL` (optional, defaults to gpt-4.1-mini). Never put credentials in source, browser code or chat. Configure through Sites environment tools. The platform handles `/signin-with-chatgpt` and `/signout-with-chatgpt`.
 
 ## Scope and limitations
 
-Current infrastructure is a Cloudflare Worker: no Linux, arbitrary TCP, packet capture or durable processes. Nmap, TShark, Sherlock and pentest automation are not connected. They require a separate persistent isolated Linux execution service with authenticated jobs, server-enforced target scopes, resource limits, tool licenses and audited lifecycle. No arbitrary shell or unscoped execution endpoint is exposed.
+Current infrastructure is a Cloudflare Worker: no Linux, arbitrary TCP, packet capture or durable processes. An optional fixed-argument Nmap runner adapter is included under runner/ but is not deployed. TShark, Sherlock and additional pentest tools are not integrated. They require a separate persistent isolated Linux execution service with authenticated jobs, server-enforced target scopes, resource limits, tool licenses and audited lifecycle. No arbitrary shell or unscoped execution endpoint is exposed.
 
 The role picker only adapts navigation. All cases belong to the authenticated visitor; no inter-user or institutional sharing is implemented. API mutations enforce same-origin requests. Storage paths derive only from trusted platform identity. Concurrent edits use object etags and return conflicts; data can be exported before reloading. The limited audit history is not immutable forensic chain-of-custody evidence.
 

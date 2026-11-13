@@ -1,0 +1,18 @@
+services:
+  nexo-runner:
+    build: .
+    ports:
+      - "127.0.0.1:8080:8080"
+    environment:
+      NEXO_RUNNER_TOKEN: ${NEXO_RUNNER_TOKEN:?Configure um token forte fora do código}
+      NEXO_ALLOWED_CIDRS: ${NEXO_ALLOWED_CIDRS:-}
+      NEXO_ALLOWED_HOSTS: ${NEXO_ALLOWED_HOSTS:-}
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=32m
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 256m
+    cpus: 1
+    pids_limit: 64
+    restart: unless-stopped
