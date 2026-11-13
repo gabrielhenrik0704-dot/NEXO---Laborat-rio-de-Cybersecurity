@@ -34,3 +34,9 @@ All Worker responses include no-store cache policy, HSTS, MIME sniffing preventi
 The server still delivers the JavaScript; a compromised hosting account, malicious app update, browser extension, compromised endpoint or XSS with script execution could access unlocked data or the passphrase. Browser code must be trusted. An independent security audit and browser-based QA are not completed. No claim of absolute security, certified forensic chain of custody or full compliance is made. The application-level consultation limiter is per Worker isolate and is not a distributed WAF or DDoS defense. Provider settings, service credentials, backups and Linux runner isolation require ongoing operational review.
 
 Linux test tooling and optional AI are still dependent on separately configured infrastructure and credentials. E2EE does not secure a compromised Linux runner or its job output before import into a vault.
+
+## Declarative extensions and introductory courses (0.4)
+
+Imported integration manifests are data, not code. Strict schemas reject unknown fields, arbitrary commands/scripts/endpoints, unavailable adapters and incompatible input types. User-installed manifests live inside the encrypted workspace. Author fields are declared metadata, not verified signatures. The backend continues enforcing authentication, fixed public sources and server-side Linux scope. Manifest installation does not install binaries or grant permissions. A new adapter requires reviewed source changes and deployment.
+
+Course progress is stored inside the encrypted workspace per profile. Completion only hides the introductory guide; it does not grant privileges, certify training or validate institutional identity. The user can reopen the guide. Backups include integration definitions and course progress; imports validate definitions before merging.

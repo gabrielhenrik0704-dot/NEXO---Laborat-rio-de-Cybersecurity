@@ -1,0 +1,1 @@
+{"format":"nexo-integration","version":1,"id":"meu-contexto-dominio","name":"Meu contexto público de domínio","author":"Gabriel Henrik Menezes Alves","description":"Consulta DNS A, MX e registro RDAP com fonte e horário.","category":"osint","inputType":"domain","steps":[{"adapter":"dns","recordType":"A"},{"adapter":"dns","recordType":"MX"},{"adapter":"rdap"}]}
