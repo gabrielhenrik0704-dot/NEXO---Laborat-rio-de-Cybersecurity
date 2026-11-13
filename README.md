@@ -1,6 +1,6 @@
-# NEXO 0.2
+# NEXO 0.3
 
-Private Sites application. Uses platform-provided identity headers and per-user R2 objects. No simulated tool output is used for operational results.
+Private Sites application. Uses platform-provided identity headers and per-user client-encrypted R2 objects. No simulated tool output is used for operational results.
 
 ## Functional modules
 
@@ -13,7 +13,7 @@ Private Sites application. Uses platform-provided identity headers and per-user 
 
 ## Deployment
 
-Run `node scripts/build.mjs` and `node --test tests/api.test.mjs`, then `node tests/ui.test.cjs`. Deploy exact committed source with `.openai/hosting.json` and `dist/server/index.js`. Static assets are embedded at build time. `BUCKET` is the Sites R2 binding.
+Run `node scripts/build.mjs`, `node --test tests/api.test.mjs tests/vault.test.mjs tests/worker.test.mjs`, `node tests/ui.test.cjs` and `node tests/vault-ui.test.cjs`. Deploy exact committed source with `.openai/hosting.json` and `dist/server/index.js`. Static assets are embedded at build time. `BUCKET` is the Sites R2 binding.
 
 ## Runtime secrets
 
@@ -28,3 +28,7 @@ The role picker only adapts navigation. All cases belong to the authenticated vi
 NEXO is not a malware scanner, password vault, person locator or forensic certification system. RDAP and routing data may be incomplete and do not establish identity. No real threat telemetry is configured. External providers receive query values. OpenStreetMap receives map tile requests. Software licensing for Leaflet is included in web/vendor/leaflet-LICENSE.txt.
 
 Browser visual QA may require the managed cua_repl.js capability; do not replace the managed preview infrastructure to bypass its absence.
+
+## Security and migration
+
+See SECURITY.md for the exact encryption boundary, no-recovery design, legacy migration, export/AI/map disclosures and remaining trust assumptions. Entry is /login; /app requires platform identity, then profile selection and vault unlock. Existing records are not encrypted until the owner creates a passphrase and completes the migration save. New case writes require encrypted envelopes.
