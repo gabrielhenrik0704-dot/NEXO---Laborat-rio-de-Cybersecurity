@@ -94,3 +94,7 @@ A criptografia protege o conteúdo do cofre no armazenamento. Consultas a fontes
 A licença reserva direitos sobre o código próprio, mas não impede tecnicamente cópias. Licenças e autorias de terceiros permanecem intactas. O projeto contou com assistência de ferramentas de IA.
 
 Repositório indicado pelo criador: https://github.com/gabrielhenrik0704-dot/NEXO---Laborat-rio-de-Cybersecurity
+
+## Pacote de download
+
+O build gera release/NEXO-0.4.0-Gabriel-Henrik.zip e seu SHA-256. O site privado oferece o pacote em /downloads/nexo-0.4.0.zip e o checksum em /downloads/nexo-0.4.0.sha256. O ZIP inclui fonte, documentação, licenças e um Worker compilado funcional, sem embutir recursivamente a própria cópia do ZIP. Rode npm run build após extrair para regenerar o artefato completo e o download. Arquivos .env, .git, dados de usuários, credenciais e caches de execução não são incluídos.
